@@ -20,7 +20,6 @@ public class TransacaoController {
     TransacaoService transacaoService;
 
     @POST
-    @Transactional
     public Response adicionarTransacao(TransacaoDTO dto) {
         if (dto == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
@@ -37,5 +36,12 @@ public class TransacaoController {
         transacaoService.add(dto);
 
         return Response.status(201).build();
+    }
+
+    @DELETE
+    public Response deletarTudo() {
+        transacaoService.deleteAll();
+
+        return Response.status(200).build();
     }
 }

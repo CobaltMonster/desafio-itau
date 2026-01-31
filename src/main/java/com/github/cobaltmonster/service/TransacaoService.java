@@ -14,5 +14,9 @@ public class TransacaoService {
     public void add(TransacaoDTO transacao) {
         transacoes.add(transacao);
     }
+
+    public void deleteAll() {
+        transacoes.clear();
+    }
 }
 
